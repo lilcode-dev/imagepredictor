@@ -4,23 +4,67 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  color: black;
+}
+html, body {
+  /* height: 100%; */
+  /* margin: 0; */
 }
 body{
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background: #5256ad;
 }
+
+.container {
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 100vh; */
+
+}
+.title {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 0 0 50px 0;
+  /* position: absolute; */
+  /* top: 10px; */
+}
+.title h1 {
+  font-size: 3rem;
+}
+.title .icon {
+  font-size: 3rem;
+  margin: 11px 0 0 15px;
+
+}
+
 .drag-area{
   border: 2px dashed #fff;
   height: auto;
-  width: 100vh;
+  width: 80%;
+  max-width: 800px;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  /* min-height: 100vh; */
+  /* position: absolute;
+  top:50%;
+  left: 50%;           
+  margin-top: -100px;
+  margin-left: -100px; */
+  /* margin-right: -100px;; */
+  
 }
 .drag-area.active{
   border: 2px solid #fff;
@@ -28,6 +72,7 @@ body{
 .drag-area .icon{
   font-size: 100px;
   color: #fff;
+
 }
 .drag-area header{
   font-size: 30px;
@@ -42,6 +87,7 @@ body{
 }
 .drag-area button{
   padding: 10px 25px;
+  margin-bottom: 10px;
   font-size: 20px;
   font-weight: 500;
   border: none;
@@ -56,4 +102,48 @@ body{
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
+}
+.results {
+  height: auto;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* justify-content: right; */
+}
+.flex-r {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0 10px 20px;
+}
+.flex-r span {
+  margin: 27px 10px 0 0;
+}
+@media screen and (max-width: 504px) {
+  .drag-area header {
+    font-size: 20px;
+  }
+  .drag-area span{
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 336px) {
+  .drag-area header {
+    font-size: 17px;
+  }
+  .drag-area span{
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 284px) {
+  .drag-area header {
+    font-size: 15px;
+  }
+  .drag-area span{
+    font-size: 13px;
+  }
 }

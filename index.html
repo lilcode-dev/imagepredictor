@@ -5,22 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drag & Drop or Browse: File Upload | CodingNepal</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="loading-bar/dist/loading-bar.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.sound.min.js"></script>
     <script src="https://unpkg.com/ml5@0.3.1/dist/ml5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+    <script type="text/javascript" src="loading-bar/dist/loading-bar.js"></script>
 </head>
 <body>
-  <div class="drag-area">
-    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-    <header>Drag & Drop to Upload File</header>
-    <span>OR</span>
-    <button>Browse File</button>
-    <input type="file" hidden>
-  </div>
+  <div class="container">
+    <div class="title">
+      <h1>Image Predictor</h1>
+      <i class="fas fa-brain icon"></i>
+    </div>
+    <div class="drag-area">
+      <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+      <header>Drag & Drop to Upload File</header>
+      <span>OR</span>
+      <button>Browse File</button>
+      <input type="file" hidden>
+    </div>
+    <div class="results">
+      <div class="results-0 flex-r">
+        <span>Dogs, Pets</span>
+        <div data-preset="circle" class="ldBar label-center" data-value="35"></div>
+      </div>
+      <div class="results-1 flex-r">
+        <span>Dogs, Pets</span>
+        <div data-preset="circle" class="ldBar label-center" data-value="35"></div>
 
+      </div>
+      <div class="results-2 flex-r">
+        <span>Dogs, Pets</span>
+        <div data-preset="circle" class="ldBar label-center" data-value="35"></div>
+      </div>
+    </div>
+  </div>
   <script src="js/script.js"></script>
   <script src="js/sketch.js"></script>
 

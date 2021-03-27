@@ -14,3 +14,16 @@ const predictImage = () => {
         console.log(results);
     });
 }
+
+// Progress Bar
+
+// var bar = new ldBar(".results", {
+//     "stroke": '#f00',
+//     "stroke-width": 10,
+//     "preset": "circle",
+//     "value": 0,
+//     "duration": 3,
+//     "precision": 0.01
+//    });
+//    bar.set(0);
+//    setInterval(200, bar.set(28.2999783754))
