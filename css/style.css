@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+:root {
+  --color1: #5256ad;
+  --color2: #5256ad;
+}
 *{
   margin: 0;
   padding: 0;
@@ -11,7 +15,11 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #5256ad;
+  background: linear-gradient(120deg, var(--color1),var(--color2));
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: cover;
+  transition: all 1s ease-out;  
 }
 
 .container {
@@ -122,7 +130,8 @@ body{
   align-items: center;
   justify-content: center;
 }
-@media screen and (max-width: 585px) {
+
+@media screen and (max-width: 585px) { 
   .title h1 {
     font-size: 2rem;
   }
@@ -179,6 +188,17 @@ body{
   .title .icon {
     font-size: 1.2rem;
     margin: 11px 0 0 10px;
+
+  }
+}
+@media screen and (max-width: 238px) {
+  .title h1 {
+    font-size: 1rem;
+    margin: 8px 0 0 0;
+  }
+  .title .icon {
+    font-size: 1.2rem;
+    margin: 11px 0 0 5px;
 
   }
 }
