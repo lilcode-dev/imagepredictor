@@ -4,17 +4,13 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  color: black;
+  color:#fff;
 }
-html, body {
-  /* height: 100%; */
-  /* margin: 0; */
-}
+
 body{
   display: flex;
   align-items: center;
   justify-content: center;
-  /* min-height: 100vh; */
   background: #5256ad;
 }
 
@@ -26,7 +22,6 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* min-height: 100vh; */
 
 }
 .title {
@@ -34,9 +29,11 @@ body{
   justify-content: center;
   flex-direction: row;
   flex-wrap: nowrap;
-  margin: 0 0 50px 0;
-  /* position: absolute; */
-  /* top: 10px; */
+  margin: 10px 0 50px 0;
+  height: auto;
+  width: 80%;
+  max-width: 800px;
+
 }
 .title h1 {
   font-size: 3rem;
@@ -44,9 +41,7 @@ body{
 .title .icon {
   font-size: 3rem;
   margin: 11px 0 0 15px;
-
 }
-
 .drag-area{
   border: 2px dashed #fff;
   height: auto;
@@ -57,14 +52,6 @@ body{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* min-height: 100vh; */
-  /* position: absolute;
-  top:50%;
-  left: 50%;           
-  margin-top: -100px;
-  margin-left: -100px; */
-  /* margin-right: -100px;; */
-  
 }
 .drag-area.active{
   border: 2px solid #fff;
@@ -117,12 +104,31 @@ body{
 .flex-r {
   display: flex;
   flex-direction: row;
-  margin: 10px 0 10px 20px;
+  margin: 10px 0 10px 0;
 }
 .flex-r span {
   margin: 27px 10px 0 0;
 }
-@media screen and (max-width: 504px) {
+.label-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.confidence-result {
+  margin: 0 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 585px) {
+  .title h1 {
+    font-size: 2rem;
+  }
+  .title .icon {
+    font-size: 2rem;
+  }
   .drag-area header {
     font-size: 20px;
   }
@@ -130,7 +136,27 @@ body{
     font-size: 18px;
   }
 }
+@media screen and (max-width: 395px) {
+  .title h1 {
+    font-size: 1.8rem;
+  }
+  .title .icon {
+    font-size: 2rem;
+    margin: 11px 0 0 10px;
 
+  }
+}
+@media screen and (max-width: 355px) {
+  .title h1 {
+    font-size: 1.5rem;
+    margin: 8px 0 0 0;
+  }
+  .title .icon {
+    font-size: 1.5rem;
+    margin: 11px 0 0 10px;
+
+  }
+}
 @media screen and (max-width: 336px) {
   .drag-area header {
     font-size: 17px;
@@ -139,11 +165,20 @@ body{
     font-size: 15px;
   }
 }
-@media screen and (max-width: 284px) {
+@media screen and (max-width: 294px) {
   .drag-area header {
     font-size: 15px;
   }
   .drag-area span{
     font-size: 13px;
+  }
+  .title h1 {
+    font-size: 1.2rem;
+    margin: 8px 0 0 0;
+  }
+  .title .icon {
+    font-size: 1.2rem;
+    margin: 11px 0 0 10px;
+
   }
 }
