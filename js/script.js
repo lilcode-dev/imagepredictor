@@ -11,9 +11,6 @@ input.addEventListener("change", function() {
   file = this.files[0];
   console.log(file);
   dropArea.classList.add("active");
-  loadingCircle.style.display = "block"
-  loadingCircle.classList.add('scale')
-
   console.log('loading ON');
   showFile();
 
@@ -40,7 +37,8 @@ dropArea.addEventListener("drop", (e) => {
 });
 
 const showFile = () => {
-  // loadingCircle.style.display = '';
+  loadingCircle.style.display = "block"
+  loadingCircle.classList.add('scale')
   let fileType = file.type;
   let validExtensions = ["image/jpeg", "image/jpg", "image/png"]; 
   if (validExtensions.includes(fileType)) {
@@ -55,43 +53,17 @@ const showFile = () => {
       dropArea.innerHTML = imgTag; 
       fileReceived(file.name);
     }
-
     fileReader.onprogress = (e) => {
-      console.log(e.loaded);
-      console.log(parseInt(((e.loaded / e.total) * 100), 10));
+      console.log('the file is in progress');
     }
     fileReader.onloadend = (e) => {
-        console.log(e);
+        console.log('the file has been uploaded');
     }
     fileReader.readAsDataURL(file);
 
   } else {
-    alert("This is not an Image File!");
+    alertify.alert('This is not an Image File!', function(){ alertify.success('Ok'); });
     dropArea.classList.remove("active");
     dragText.textContent = "Drag & Drop to Upload File";
   }
 }
-// zmsugu
-// function() {
-//   var total = Files.length; loaded = 0;
-//   for (var i in Files) {
-//       var fileReader = new FileReader();
-//       fileReader.readAsBinaryString(Files[i]);
-//       fileReader.onload = function() {
-
-//           // do something on FileReader onload
-//           loaded++;
-
-//           if (loaded == total){
-//               onAllFilesLoaded();
-//           }
-//       }
-
-//       fileReader.onprogress = function(data) {
-//           if (data.lengthComputable) {                                            
-//               var progress = parseInt( ((data.loaded / data.total) * 100), 10 );
-//               console.log(progress);
-//           }
-//       }
-//   }
-// }

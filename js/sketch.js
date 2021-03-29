@@ -9,33 +9,46 @@ const fileReceived = (fileName) => {
     console.log(`file name: ${fileName}`);
     predictImage();
 }
-let resultsPredict;
+
 const predictImage = () => {
     mobilenet.predict( getImageData(), (err, results) => {
         console.log(results);
-        resultsPredict = results;
         palleteColors();
         loadingCircle.style.display = 'none';
         console.log('klk')
-        resultsDiv.style.display = 'block'
-        setInterval(1000, setResults());
-    });
+        resultsDiv.style.display = 'flex';
+        return results
+    }).then((response) => setResults(response))
 }
 
-
 const labelResults = document.querySelectorAll('.label-result span')
-const setResults = () => {
-    try{
-        labelResults[0].innerText = resultsPredict[0].label;
-        document.querySelector('#results-0 div').ldBar.set(100 * (resultsPredict[0].confidence))
-        labelResults[1].innerText = resultsPredict[1].label;
-        document.querySelector('#results-1 div').ldBar.set(100 * (resultsPredict[1].confidence))
-        labelResults[2].innerText = resultsPredict[2].label;
-        document.querySelector('#results-2 div').ldBar.set(100 * (resultsPredict[2].confidence))
-    } catch(error) {
-        console.log(error);
-    }
-    
+
+// fixing data-duration error (loading.io)
+
+let bar0 = new ldBar(document.querySelector('#results-0 div'));
+let bar1 = new ldBar(document.querySelector('#results-1 div'));
+let bar2 = new ldBar(document.querySelector('#results-2 div'));
+
+//
+const setResults = (results) => {
+    bar0.set(0);
+    labelResults[0].innerText = results[0].label;
+    setTimeout(() => {
+        bar0.set(100 * (results[0].confidence));
+        console.log('bar0!')
+    }, 500);
+    bar1.set(0);
+    labelResults[1].innerText = results[1].label;
+    setTimeout(() => {
+        bar1.set(100 * (results[1].confidence));
+        console.log('bar1!')
+    }, 500);
+    bar2.set(0);
+    labelResults[2].innerText = results[2].label;
+    setTimeout(() => {
+        bar2.set(100 * (results[2].confidence));
+        console.log('bar2!')
+    }, 500);
 }
 
 
@@ -45,23 +58,3 @@ const palleteColors = () => {
     document.documentElement.style.setProperty('--color1', `rgb(${twoColors[0][0]},${twoColors[0][1]},${twoColors[0][2]})`);
     document.documentElement.style.setProperty('--color1', `rgb(${twoColors[1][0]},${twoColors[1][1]},${twoColors[1][2]})`);
 }
-window.onload = function() {
-    const bar0 = document.querySelector('#results-0 div').ldBar;
-    const bar1 = document.querySelector('#results-1 div').ldBar;
-    const bar2 = document.querySelector('#results-2 div').ldBar;
-    console.log(bar0)
-}
-
-// Progress Bar
-
-// var barResult1 = new ldBar("#results-0", {
-//     "stroke": '#f00',
-//     "stroke-width": 20,
-//     "preset": "circle",
-//     "value": 0,
-//     "duration": 3,
-//     "precision": 0.01
-//    });
-//    console.log(barResult1);
-//    barResult1.set(0);
-//    setInterval(200, barResult1.set(28.2999783754))

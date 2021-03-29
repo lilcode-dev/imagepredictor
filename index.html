@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="loading-bar/dist/loading-bar.min.css"/>
     <link rel="shortcut icon" href="img/icon2.png" type="image/x-icon">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
@@ -14,6 +15,8 @@
     <script src="https://unpkg.com/ml5@0.3.1/dist/ml5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
     <script type="text/javascript" src="loading-bar/dist/loading-bar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
 </head>
 <body>
   <div class="container">
@@ -47,7 +50,7 @@
         </div>
         <div class="confidence-result" id="results-0">
           <span>Precision:</span>
-          <div data-preset="circle" class="ldBar label-center" data-value="0" data-precision= "0.01"></div>
+          <div data-preset="circle" class="ldBar label-center" data-value="0" data-precision= "0.01" data-duration = "2.5"></div>
         </div>
       </div>
       <div class="flex-r">
@@ -56,17 +59,16 @@
         </div>
         <div class="confidence-result" id="results-1">
           <span>Precision:</span>
-          <div data-preset="circle" class="ldBar label-center" data-value="0" data-precision= "0.01"></div>
+          <div data-preset="circle" class="ldBar label-center" data-value="0" data-precision= "0.01" data-duration = "2.5"></div>
         </div>
       </div>
-      <!-- sdfsdfs -->
       <div class="flex-r">
         <div class="label-result">
           <span>Dogs, Pets</span>
         </div>
         <div class="confidence-result" id="results-2">
           <span>Precision:</span>
-          <div data-preset="circle" class="ldBar label-center" data-value="0" data-precision= "0.01"></div>
+          <div data-preset="circle" class="ldBar label-center" data-value="0" data-precision= "0.01" data-duration = "2.5"></div>
         </div>
       </div>
     </div>
