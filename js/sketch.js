@@ -4,11 +4,9 @@ const mobilenetReady = () => {
 }
 const colorThief = new ColorThief();
 let mobilenet = ml5.imageClassifier('MobileNet', mobilenetReady());
-
 const fileReceived = (fileName) => {
     console.log(`file name: ${fileName}`);
 }
-
 const predictImage = () => {
     mobilenet.predict( getImageData(), (err, results) => {
         console.log(results);
