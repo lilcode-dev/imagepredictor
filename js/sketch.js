@@ -15,6 +15,7 @@ const predictImage = () => {
         console.log(results);
         resultsPredict = results;
         palleteColors();
+        loadingCircle.style.display = 'none';
         setInterval(1000, setResults());
     });
 }
