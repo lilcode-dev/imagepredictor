@@ -7,7 +7,6 @@ let mobilenet = ml5.imageClassifier('MobileNet', mobilenetReady());
 
 const fileReceived = (fileName) => {
     console.log(`file name: ${fileName}`);
-    predictImage();
 }
 
 const predictImage = () => {
@@ -50,9 +49,12 @@ const setResults = (results) => {
         bar2.set(100 * (results[2].confidence));
         console.log('bar2!')
     }, 500);
+    setTimeout(() => {
+        resetButton.style.display = "block";
+    }, 4000);
 }
 
-
+// set colors in background
 const palleteColors = () => {
     let colors = colorThief.getPalette(getImageData());
     let twoColors = [[...colors[0]],[...colors[1]]];

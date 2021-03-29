@@ -5,6 +5,7 @@ loadingCircle = document.querySelector(".loading"),
 resultsDiv = document.querySelector(".results"),
 input = dropArea.querySelector("input"),
 modal = document.querySelector('card'),
+uploadArea = document.querySelector('.uploadImage'),
 footer = document.querySelector(".footer");
 let file;
 button.onclick = () => input.click(); 
@@ -45,14 +46,20 @@ const showFile = () => {
   let validExtensions = ["image/jpeg", "image/jpg", "image/png"]; 
   if (validExtensions.includes(fileType)) {
     let fileReader = new FileReader(); 
-    fileReader.onloadstart = ( e ) => {
+    fileReader.onloadstart = (e) => {
       console.log(e);
     }
     fileReader.onload = ( e ) => {
       console.log(e.target);
       let fileURL = fileReader.result;
-      let imgTag = `<img class="img-predict"src="${fileURL}" alt="">`;
-      dropArea.innerHTML = imgTag; 
+      // let imgTag = `<img class="img-predict"src="${fileURL}" alt="">`;
+      let imgTag = document.createElement('img');
+      imgTag.setAttribute('src', fileURL);
+      imgTag.setAttribute('class', 'img-predict');
+      imgTag.setAttribute('height', '800px');
+      imgTag.setAttribute('width', '800px');
+      uploadArea.style.display = "none";
+      dropArea.appendChild(imgTag); 
       fileReceived(file.name);
     }
     fileReader.onprogress = (e) => {
@@ -60,6 +67,8 @@ const showFile = () => {
     }
     fileReader.onloadend = (e) => {
         console.log('the file has been uploaded');
+        predictImage();
+
     }
     fileReader.readAsDataURL(file);
 
@@ -71,6 +80,24 @@ const showFile = () => {
     dragText.textContent = "Drag & Drop to Upload File";
   }
 }
+// reset button
+
+
+const resetImage = () => {
+  console.log('button reload')
+  document.querySelector('.img-predict').remove();
+  footer.style.position = 'absolute';
+  uploadArea.style.display = 'flex';
+  resultsDiv.style.display = 'none';
+  document.documentElement.style.setProperty('--color1', `#5256ad`);
+  document.documentElement.style.setProperty('--color2', `#5256ad`);
+  resetButton.style.display = 'none';
+  input.value = '';
+}
+
+const resetButton = document.querySelector('.reset-button');
+resetButton.addEventListener('click', resetImage);
+
 
 // enter year at footer
 
