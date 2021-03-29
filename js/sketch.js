@@ -13,11 +13,13 @@ const fileReceived = (fileName) => {
 const predictImage = () => {
     mobilenet.predict( getImageData(), (err, results) => {
         console.log(results);
+    }).then((response) => {
         palleteColors();
         footer.style.position = 'inherit';
         loadingCircle.style.display = 'none';
         resultsDiv.style.display = 'flex';
-    }).then((response) => setResults(response))
+        setResults(response)
+    })
 }
 
 const labelResults = document.querySelectorAll('.label-result span')
