@@ -10,10 +10,7 @@
   font-family: "Poppins", sans-serif;
   color:#fff;
 }
-html {
-  background: linear-gradient(121deg, var(--color1),var(--color2));
 
-}
 body{
   display: flex;
   align-items: center;
