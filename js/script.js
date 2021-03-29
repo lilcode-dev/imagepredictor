@@ -82,8 +82,3 @@ modal.querySelector('button').addEventListener('click', (e) => {
   e.preventDefault();
   modal.classList.toggle('fadein')
 })
-
-function changeOpacity() {
-  document.body.style.setProperty('--opacity', opacity.value);
-}
-changeOpacity();
