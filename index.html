@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Predictor ml5.js</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="loading-bar/dist/loading-bar.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/loading-bar/loading-bar.min.css"/>
+    <link rel="stylesheet" href="css/modal/style.css">
     <link rel="shortcut icon" href="img/icon2.png" type="image/x-icon">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
@@ -14,16 +15,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.sound.min.js"></script>
     <script src="https://unpkg.com/ml5@0.3.1/dist/ml5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
-    <script type="text/javascript" src="loading-bar/dist/loading-bar.min.js"></script>
+    <script type="text/javascript" src="js/loading-bar/loading-bar.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-    <!-- Axentix & Neu-Axentix CSS minified version -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@1.1.0/dist/css/axentix.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/neu-axentix@1.4.0/dist/css/neu-axentix.min.css">
-
-<!-- Axentix & Neu-Axentix JS minified version -->
-
-
-
 </head>
 <body>
   <div class="container">
@@ -79,10 +72,23 @@
         </div>
       </div>
     </div>
+    <card class="neumorphic fade">
+      <div>
+        <input type="range" name="opacity" id="opacity" value="0" min="0" max="100" oninput="changeOpacity()">
+      </div>
+      <div class="message">
+        <div class="message-title">
+          <span>This is not an Image File!</span>
+        </div>
+        <div class="message-button">
+          <button>Ok</button>
+        </div>
+      </div>
+    </card>
     <div class="footer">
       <footer>
         <a href="https://github.com/lilcode-dev">
-          <span>Copyright © 2021 - </span>
+          <span class="footer-year"></span>
           <span class="lilcode">By: Lil Code</span>
         </a>
         <i class="fab fa-github footer-icon"></i>

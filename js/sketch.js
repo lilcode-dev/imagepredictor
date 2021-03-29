@@ -14,10 +14,9 @@ const predictImage = () => {
     mobilenet.predict( getImageData(), (err, results) => {
         console.log(results);
         palleteColors();
-        loadingCircle.style.display = 'none';
         footer.style.position = 'inherit';
+        loadingCircle.style.display = 'none';
         resultsDiv.style.display = 'flex';
-        return results
     }).then((response) => setResults(response))
 }
 

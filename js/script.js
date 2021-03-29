@@ -4,6 +4,7 @@ button = dropArea.querySelector("button"),
 loadingCircle = document.querySelector(".loading"),
 resultsDiv = document.querySelector(".results"),
 input = dropArea.querySelector("input"),
+modal = document.querySelector('card'),
 footer = document.querySelector(".footer");
 let file;
 button.onclick = () => input.click(); 
@@ -63,8 +64,26 @@ const showFile = () => {
     fileReader.readAsDataURL(file);
 
   } else {
-    alertify.alert('This is not an Image File!', function(){ alertify.success('Ok'); });
+    // active message if th file is not an image
+    modal.classList.toggle('fadein')
+    loadingCircle.style.display = 'none';
     dropArea.classList.remove("active");
     dragText.textContent = "Drag & Drop to Upload File";
   }
 }
+
+// enter year at footer
+
+footer.querySelector('.footer-year').textContent = `Copyright © ${new Date().getFullYear()} - `;
+
+// modal
+
+modal.querySelector('button').addEventListener('click', (e) => {
+  e.preventDefault();
+  modal.classList.toggle('fadein')
+})
+
+function changeOpacity() {
+  document.body.style.setProperty('--opacity', opacity.value);
+}
+changeOpacity();
