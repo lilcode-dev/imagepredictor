@@ -55,6 +55,7 @@ const setResults = (results) => {
 }
 
 // set colors in background
+
 const palleteColors = () => {
     let colors = colorThief.getPalette(getImageData());
     let twoColors = [[...colors[0]],[...colors[1]]];

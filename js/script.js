@@ -14,9 +14,8 @@ input.addEventListener("change", function() {
   file = this.files[0];
   console.log(file);
   dropArea.classList.add("active");
-  console.log('loading ON');
+  console.log('loading...');
   showFile();
-
 });
 
 
@@ -49,10 +48,10 @@ const showFile = () => {
     fileReader.onloadstart = (e) => {
       console.log(e);
     }
-    fileReader.onload = ( e ) => {
+    fileReader.onload = (e) => {
       console.log(e.target);
       let fileURL = fileReader.result;
-      // let imgTag = `<img class="img-predict"src="${fileURL}" alt="">`;
+      // let imgTag = `<img class="img-predict"src="${fileURL}" alt="">`; // error promise reject by widht and height image
       let imgTag = document.createElement('img');
       imgTag.setAttribute('src', fileURL);
       imgTag.setAttribute('class', 'img-predict');
@@ -68,10 +67,8 @@ const showFile = () => {
     fileReader.onloadend = (e) => {
         console.log('the file has been uploaded');
         predictImage();
-
     }
     fileReader.readAsDataURL(file);
-
   } else {
     // active message if th file is not an image
     modal.classList.toggle('fadein')
@@ -80,8 +77,8 @@ const showFile = () => {
     dragText.textContent = "Drag & Drop to Upload File";
   }
 }
-// reset button
 
+// reset button
 
 const resetImage = () => {
   console.log('button reload')
