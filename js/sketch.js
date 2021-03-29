@@ -15,7 +15,7 @@ const predictImage = () => {
         console.log(results);
         palleteColors();
         loadingCircle.style.display = 'none';
-        console.log('klk')
+        footer.style.position = 'inherit';
         resultsDiv.style.display = 'flex';
         return results
     }).then((response) => setResults(response))
@@ -56,5 +56,5 @@ const palleteColors = () => {
     let colors = colorThief.getPalette(getImageData());
     let twoColors = [[...colors[0]],[...colors[1]]];
     document.documentElement.style.setProperty('--color1', `rgb(${twoColors[0][0]},${twoColors[0][1]},${twoColors[0][2]})`);
-    document.documentElement.style.setProperty('--color1', `rgb(${twoColors[1][0]},${twoColors[1][1]},${twoColors[1][2]})`);
+    document.documentElement.style.setProperty('--color2', `rgb(${twoColors[1][0]},${twoColors[1][1]},${twoColors[1][2]})`);
 }

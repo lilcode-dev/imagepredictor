@@ -3,7 +3,8 @@ dragText = dropArea.querySelector("header"),
 button = dropArea.querySelector("button"),
 loadingCircle = document.querySelector(".loading"),
 resultsDiv = document.querySelector(".results"),
-input = dropArea.querySelector("input");
+input = dropArea.querySelector("input"),
+footer = document.querySelector(".footer");
 let file;
 button.onclick = () => input.click(); 
 
