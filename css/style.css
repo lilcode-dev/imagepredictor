@@ -101,6 +101,12 @@ body{
 .loading {
   margin: 20px 0 0 0;
   display: none;
+  transition: 1.5s ease-in-out;
+  transform: scale(0);
+
+}
+.scale {
+  transform: scale(1);
 }
 .lds-roller {
   display: inline-block;
@@ -196,7 +202,20 @@ body{
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  display: none;
   /* justify-content: right; */
+}
+.results:active {
+  background-color: red;
+}
+.results.horizTranslate {
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  margin-left: 50% !important;
+  animation: fadeOut ease 8s;
 }
 .flex-r {
   display: flex;

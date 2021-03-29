@@ -16,6 +16,8 @@ const predictImage = () => {
         resultsPredict = results;
         palleteColors();
         loadingCircle.style.display = 'none';
+        console.log('klk')
+        resultsDiv.style.display = 'block'
         setInterval(1000, setResults());
     });
 }

@@ -2,6 +2,7 @@ const dropArea = document.querySelector(".drag-area"),
 dragText = dropArea.querySelector("header"),
 button = dropArea.querySelector("button"),
 loadingCircle = document.querySelector(".loading"),
+resultsDiv = document.querySelector(".results"),
 input = dropArea.querySelector("input");
 let file;
 button.onclick = () => input.click(); 
@@ -10,6 +11,10 @@ input.addEventListener("change", function() {
   file = this.files[0];
   console.log(file);
   dropArea.classList.add("active");
+  loadingCircle.style.display = "block"
+  loadingCircle.classList.add('scale')
+
+  console.log('loading ON');
   showFile();
 
 });
@@ -35,7 +40,7 @@ dropArea.addEventListener("drop", (e) => {
 });
 
 const showFile = () => {
-  loadingCircle.style.display = '';
+  // loadingCircle.style.display = '';
   let fileType = file.type;
   let validExtensions = ["image/jpeg", "image/jpg", "image/png"]; 
   if (validExtensions.includes(fileType)) {
