@@ -38,16 +38,53 @@ const showFile = () => {
   let validExtensions = ["image/jpeg", "image/jpg", "image/png"]; 
   if (validExtensions.includes(fileType)) {
     let fileReader = new FileReader(); 
-    fileReader.onload = () => {
+    fileReader.onloadstart = ( e ) => {
+      console.log(e);
+    }
+    fileReader.onload = ( e ) => {
+      console.log(e.target);
       let fileURL = fileReader.result;
       let imgTag = `<img class="img-predict"src="${fileURL}" alt="">`;
       dropArea.innerHTML = imgTag; 
       fileReceived(file.name);
     }
+
+    fileReader.onprogress = (e) => {
+      console.log(e.loaded);
+      console.log(parseInt(((e.loaded / e.total) * 100), 10));
+    }
+    fileReader.onloadend = (e) => {
+        console.log(e);
+    }
     fileReader.readAsDataURL(file);
+
   } else {
     alert("This is not an Image File!");
     dropArea.classList.remove("active");
     dragText.textContent = "Drag & Drop to Upload File";
   }
 }
+// zmsugu
+// function() {
+//   var total = Files.length; loaded = 0;
+//   for (var i in Files) {
+//       var fileReader = new FileReader();
+//       fileReader.readAsBinaryString(Files[i]);
+//       fileReader.onload = function() {
+
+//           // do something on FileReader onload
+//           loaded++;
+
+//           if (loaded == total){
+//               onAllFilesLoaded();
+//           }
+//       }
+
+//       fileReader.onprogress = function(data) {
+//           if (data.lengthComputable) {                                            
+//               var progress = parseInt( ((data.loaded / data.total) * 100), 10 );
+//               console.log(progress);
+//           }
+//       }
+//   }
+// }
