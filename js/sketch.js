@@ -35,27 +35,22 @@ const setResults = (results) => {
     labelResults[0].innerText = results[0].label;
     setTimeout(() => {
         bar0.set(100 * (results[0].confidence));
-        console.log('bar0!')
     }, 500);
     bar1.set(0);
     labelResults[1].innerText = results[1].label;
     setTimeout(() => {
         bar1.set(100 * (results[1].confidence));
-        console.log('bar1!')
     }, 500);
     bar2.set(0);
     labelResults[2].innerText = results[2].label;
     setTimeout(() => {
         bar2.set(100 * (results[2].confidence));
-        console.log('bar2!')
     }, 500);
     setTimeout(() => {
         resetButton.style.display = "block";
     }, 4000);
 }
-
 // set colors in background
-
 const palleteColors = () => {
     let colors = colorThief.getPalette(getImageData());
     let twoColors = [[...colors[0]],[...colors[1]]];

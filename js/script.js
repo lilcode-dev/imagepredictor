@@ -55,8 +55,8 @@ const showFile = () => {
       let imgTag = document.createElement('img');
       imgTag.setAttribute('src', fileURL);
       imgTag.setAttribute('class', 'img-predict');
-      imgTag.setAttribute('height', '800px');
-      imgTag.setAttribute('width', '800px');
+      imgTag.setAttribute('height', '400px');
+      imgTag.setAttribute('width', '400px');
       uploadArea.style.display = "none";
       dropArea.appendChild(imgTag); 
       fileReceived(file.name);
@@ -89,6 +89,11 @@ const resetImage = () => {
   document.documentElement.style.setProperty('--color1', `#5256ad`);
   document.documentElement.style.setProperty('--color2', `#5256ad`);
   resetButton.style.display = 'none';
+  // reset circle bar
+  bar0.set(0);
+  bar1.set(0);
+  bar2.set(0);
+
   input.value = '';
 }
 
