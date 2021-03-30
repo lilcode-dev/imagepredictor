@@ -10,12 +10,15 @@ const fileReceived = (fileName) => {
 const predictImage = () => {
     mobilenet.predict( getImageData(), (err, results) => {
         console.log(results);
+        console.log(err);
     }).then((response) => {
         palleteColors();
         footer.style.position = 'inherit';
         loadingCircle.style.display = 'none';
         resultsDiv.style.display = 'flex';
         setResults(response)
+    }).catch((err) => {
+        console.log(err);
     })
 }
 
