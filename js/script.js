@@ -34,6 +34,7 @@ dropArea.addEventListener("dragleave", () => {
 dropArea.addEventListener("drop", (e) => {
   e.preventDefault();
   file = e.dataTransfer.files[0];
+  ( document.querySelector('.img-predict') !== null ) ? resetImage() : false;
   console.log(file)
   showFile();
 });
