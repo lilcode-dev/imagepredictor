@@ -30,6 +30,7 @@ let bar1 = new ldBar(document.querySelector('#results-1 div'));
 let bar2 = new ldBar(document.querySelector('#results-2 div'));
 
 //
+
 const setResults = (results) => {
     bar0.set(0);
     labelResults[0].innerText = results[0].label;

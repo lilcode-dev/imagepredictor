@@ -274,9 +274,10 @@ body{
   align-items: center;
   justify-content: center;
 }
-.flex-r span {
+/* fixed margin in results */
+/* .flex-r span {
   margin: 27px 10px 0 0;
-}
+} */
 .label-result {
   display: flex;
   flex-direction: column;
